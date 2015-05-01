@@ -31,28 +31,64 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-
+        it('url defined', function() {
+            $(allFeeds).each( function() {
+                expect(this.url).toBeDefined();
+                expect(this.url.length).not.toBe(0);
+            })
+        });
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+         it('name defined', function() {
+            $(allFeeds).each( function() {
+                expect(this.name).toBeDefined();
+                expect(this.name.length).not.toBe(0);
+            })
+        });
+
     });
 
 
     /* TODO: Write a new test suite named "The menu" */
+    describe('The menu', function(){
+        /* This test suite test various functionality and
+         * behavior of the menu.
+         */
 
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+        it('hidden by default', function() {
+            expect($('body')).toHaveClass('menu-hidden');
+        });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+        var menuIcon = $('.menu-icon-link');
+        var spyMenuIconClick = spyOnEvent(menuIcon, 'click');
+
+        it('menu shows on click', function() {
+            menuIcon.click();
+            expect('click').toHaveBeenTriggeredOn('.menu-icon-link');
+            expect(spyMenuIconClick).toHaveBeenTriggered();
+            expect($('body')).not.toHaveClass('menu-hidden');
+        });
+
+        it('menu hides on click', function() {
+            menuIcon.click();
+            expect('click').toHaveBeenTriggeredOn('.menu-icon-link');
+            expect(spyMenuIconClick).toHaveBeenTriggered();
+            expect($('body')).toHaveClass('menu-hidden');
+        });
+    });
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
