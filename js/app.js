@@ -13,16 +13,16 @@ var allFeeds = [
         url: 'http://blog.udacity.com/feeds/posts/default?alt=rss'
     }, {
         name: 'CSS Tricks',
-        url: 'https://css-tricks.com/feed'
+        url: 'http://css-tricks.com/feed'
     }, {
         name: 'HTML5 Rocks',
-        url: 'https://feeds.feedburner.com/html5rocks'
+        url: 'http://feeds.feedburner.com/html5rocks'
     }, {
         name: 'Linear Digressions',
-        url: 'https://feeds.feedburner.com/udacity-linear-digressions'
+        url: 'http://feeds.feedburner.com/udacity-linear-digressions'
     }, {
         name: 'The Guardian Portugal',
-        url: 'https://www.theguardian.com/world/portugal/rss'
+        url: 'http://www.theguardian.com/world/portugal/rss'
     }
 ];
 
